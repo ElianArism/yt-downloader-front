@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  color: whitesmoke;
+}
+
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-color: #0d1117;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.input-color,
+.input-color:focus {
+  background-color: #18212e;
+  color: whitesmoke;
+}
+
+.input-color::placeholder {
+  color: rgb(177, 177, 177);
+}
+
+.effect-hover {
+  transition: background-color 100ms;
+  background-color: inherit;
+  &:hover {
+    transition: background-color 100ms;
+    background-color: #18212e;
+  }
+}

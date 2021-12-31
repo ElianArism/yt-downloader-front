@@ -1,0 +1,68 @@
+<div class="row my-4 mx-auto">
+  <div class="col">
+    <div
+      class="
+        form-group
+        d-flex
+        flex-column
+        align-items-center
+        justify-content-center
+      "
+    >
+      <label for="url" class="mb-2">Write the url of the youtube video.</label>
+
+      <input
+        type="text"
+        id="url"
+        class="form-control w-75 input-color"
+        placeholder="https://www.youtube.com/wat..."
+        autocomplete="off"
+        #input
+      />
+    </div>
+
+    <div
+      *ngIf="!spinner"
+      class="d-flex mx-auto w-75 rounded mt-4 justify-content-around"
+    >
+      <button
+        class="btn text-info effect-hover"
+        (click)="validateUrl(input.value, 'video'); input.value = ''"
+      >
+        Download video
+      </button>
+      <button
+        class="btn text-info effect-hover"
+        (click)="validateUrl(input.value, 'audio'); input.value = ''"
+      >
+        Download audio
+      </button>
+    </div>
+
+    <p *ngIf="errorMsg" class="text-center mt-3 text-danger">{{ errorMsg }}</p>
+
+    <div
+      *ngIf="thumbnail"
+      class="
+        my-3
+        p-2
+        d-flex
+        w-50
+        text-center
+        align-items-center
+        justify-content-center
+        flex-column
+        mx-auto
+      "
+    >
+      <picture>
+        <img height="200" width="200" [src]="thumbnail" alt="" />
+      </picture>
+
+      <p class="d-block my-2" *ngIf="title">{{ title }}</p>
+      <p *ngIf="artist">{{ artist }}</p>
+
+      <app-spinner *ngIf="spinner"></app-spinner>
+    </div>
+  </div>
+</div>

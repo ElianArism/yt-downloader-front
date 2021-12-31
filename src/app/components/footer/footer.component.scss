@@ -1,0 +1,23 @@
+.font-small {
+  font-size: small;
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 932px) {
+  .social-sizing {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .container-social-sizing {
+    width: 100% !important;
+  }
+  .social-sizing {
+    width: 55% !important;
+  }
+}
